@@ -1,10 +1,11 @@
 <?php
 
-    function fs_setup(){
-        add_theme_support('menus');
+function fs_setup()
+{
+    add_theme_support('menus');
 
-        register_nav_menu(
-            'primary',
-            __('Primary Menu', 'fyroistudios')
-        );
-    }
+    register_nav_menu(
+        'primary',
+        __('Primary Menu', 'fyroistudios')
+    );
+}
