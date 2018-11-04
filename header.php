@@ -14,7 +14,19 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">LuxuryHotel</a>
+
+            <?php
+                if ( function_exists( 'the_custom_logo' ) ) {
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    if ( has_custom_logo() ) { ?>
+                        <a class="navbar-brand" href="index.html"><img src="<?php echo  esc_url( $logo[0] ) ?>"></a>
+                    <?php } else { ?>
+                        <a class="navbar-brand" href="index.html"><?php echo  get_bloginfo( 'name' ) ?></a>
+                    <?php }
+                }
+            ?>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
