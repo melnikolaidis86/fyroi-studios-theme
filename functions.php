@@ -15,6 +15,6 @@ require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 add_action('wp_enqueue_scripts', 'fs_enqueue');
 add_action('after_setup_theme', 'fs_setup');
 add_action('widgets_init', 'fs_widgets');
-add_action('customize_register', 'fs_customize_register');
+add_action( 'customize_register', 'fs_customize_register' );
 
 //  Shortcodes
