@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <?php get_template_part( 'template-parts/page/content', 'front-page-video' ); ?>
+    <?php get_template_part( 'template-parts/page/content', 'front-page-parallax' ); ?>
 
     <?php get_template_part( 'template-parts/page/content', 'front-page-information' ); ?>
 
