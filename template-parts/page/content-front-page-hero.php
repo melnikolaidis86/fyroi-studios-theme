@@ -16,7 +16,7 @@
                 <div class="mb-5 element-animate">
                     <h1><?php echo get_theme_mod('fs_hero_title', 'Welcome To Our Luxury Rooms'); ?></h1>
                     <p><?php echo get_theme_mod('fs_hero_subtitle', 'Discover our world\'s #1 Luxury Room For VIP.'); ?></p>
-                    <p><a href="booknow.html" class="btn btn-primary"><?php _e('Check Our Rooms', 'fyroi_theme') ?></a></p>
+                    <p><a href="<?php echo home_url( '/rooms/' ) ?>" class="btn btn-primary"><?php _e('Check Our Rooms', 'fyroi_theme') ?></a></p>
                 </div>
 
             </div>
