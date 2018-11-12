@@ -26,18 +26,20 @@
         wp_enqueue_style('fs_style');
 
         //Register 3rd party js
+        wp_register_script('fs_jquery', get_template_directory_uri() . '/assets/js/jquery-3.2.1.min.js', [], false, true);
+        wp_register_script('fs_jquery_migrate', get_template_directory_uri() . '/assets/js/jquery-migrate-3.0.0.js', [], false, true);
         wp_register_script('fs_popper', get_template_directory_uri() . '/assets/js/popper.min.js', [], false, true);
-        wp_register_script('fs_bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', [], false, true);
+        wp_register_script('fs_bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', ['fs_jquery'], false, true);
         wp_register_script('fs_owl_carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', [], false, true);
-        wp_register_script('fs_waypoints', get_template_directory_uri() . '/assets/js/jquery.waypoints.min.js', [], false, true);
-        wp_register_script('fs_stellar', get_template_directory_uri() . '/assets/js/jquery.stellar.min.js', [], false, true);
-        wp_register_script('fs_magnific', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', [], false, true);
-        wp_register_script('fs_magnific_options', get_template_directory_uri() . '/assets/js/magnific-popup-options.js', [], false, true);
+        wp_register_script('fs_waypoints', get_template_directory_uri() . '/assets/js/jquery.waypoints.min.js', ['fs_jquery', 'fs_jquery_migrate'], false, true);
+        wp_register_script('fs_stellar', get_template_directory_uri() . '/assets/js/jquery.stellar.min.js', ['fs_jquery'], false, true);
+        wp_register_script('fs_magnific', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', ['fs_jquery', 'fs_magnific_options'], false, true);
+        wp_register_script('fs_magnific_options', get_template_directory_uri() . '/assets/js/magnific-popup-options.js', ['fs_jquery'], false, true);
 
         wp_register_script('fs_main', get_template_directory_uri() . '/assets/js/main.js', [], false, true);
 
         //Enqueue scripts
-        wp_enqueue_script('jquery');
+        wp_enqueue_script('fs_jquery');
         wp_enqueue_script('fs_popper');
         wp_enqueue_script('fs_bootstrap_js');
         wp_enqueue_script('fs_owl_carousel');
